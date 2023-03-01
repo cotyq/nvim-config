@@ -151,7 +151,7 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = { {'branch', fmt = function(str) return str:sub(1,7) end } },
+    lualine_b = { {'branch', fmt = function(str) return str:match('^%w+%-%d+') or str:match('^%w+') end } },
     lualine_c = {'filename'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
